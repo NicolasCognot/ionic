@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FilmPage } from './film.page';
+import { VtubersListPage } from './vtubers-list.page';
 
-describe('FilmPage', () => {
-  let component: FilmPage;
-  let fixture: ComponentFixture<FilmPage>;
+describe('VtubersListPage', () => {
+  let component: VtubersListPage;
+  let fixture: ComponentFixture<VtubersListPage>;
 
   beforeEach(async(() => {
-    fixture = TestBed.createComponent(FilmPage);
+    fixture = TestBed.createComponent(VtubersListPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

@@ -5,14 +5,18 @@
 export const environment = {
   production: false,
   firebase: {
-    projectId: 'films-2f0bc',
-    appId: '1:484816020469:web:b810508c4ea7c4aba1b6bc',
-    databaseURL: 'https://films-2f0bc-default-rtdb.firebaseio.com',
-    storageBucket: 'films-2f0bc.appspot.com',
-    locationId: 'europe-west',
-    apiKey: 'AIzaSyBvVaCQW19mHbJRd0CdbGLtIKUajnwuZaw',
-    authDomain: 'films-2f0bc.firebaseapp.com',
-    messagingSenderId: '484816020469',
+    apiKey: "AIzaSyAgQypzPV-XzmarxDlzAbbtpbLBKpOkcUM",
+
+    authDomain: "vt-ionic.firebaseapp.com",
+  
+    projectId: "vt-ionic",
+  
+    storageBucket: "vt-ionic.appspot.com",
+  
+    messagingSenderId: "491980918967",
+  
+    appId: "1:491980918967:web:34a83035abe3fd10b37d32"
+  
   },
 };
 

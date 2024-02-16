@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mes Oshies</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h2>Création d'un nouveau vtuber</h2>
+  <ion-button routerLink="/vtubers/new">Création</ion-button>
+  <h2>Liste des vtubers</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" *ngFor="let vtuber of vtubers">
+        <ion-card [routerLink]="['/vtubers', vtuber.id]">
+          <img [src]="vtuber.pictureLink" [alt]="vtuber.name">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  Pied de page
+</ion-footer>
+

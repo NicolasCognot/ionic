@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/vtubers"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="vtuber">{{ vtuber.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-button (click)="setModif()">Rendre Modifiable</ion-button>
+  <div *ngIf="!modif">
+    <ion-grid *ngIf="vtuber">
+      <ion-row>
+        <ion-col>
+          <strong>toujours actif :</strong>
+          <ion-icon *ngIf="vtuber.graduated" name="checkmark"></ion-icon>
+          <ion-icon *ngIf="!vtuber.graduated" name="close-circle"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="onDelete(vtuber.id)">
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <img [src]="vtuber.pictureLink" [alt]="vtuber.name">
+        </ion-col>
+        <ion-col>
+          <strong>Nom</strong><br>
+          {{vtuber.name}} <br>
+          <strong>Date de début debut</strong><br>
+          {{vtuber.dateDebut}} <br>
+          <strong>Agence</strong><br>
+          {{vtuber.agency}} <br>
+          <strong>Vague</strong><br>
+          {{vtuber.wave}} <br>
+          <strong>Plateforme habituelle</strong><br>
+          {{vtuber.streamingPlatform}} <br>
+          <strong>Fanname</strong> <br>
+          {{vtuber.fanName}}  <br>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <strong>Langue</strong><br>
+          {{vtuber.language}} <br>
+        </ion-col>
+        <ion-col>
+          <strong>time_TODO</strong> <br>
+          {{vtuber.time_TODO}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <strong>Résumé</strong> <br>
+          <p>
+            {{vtuber.lore}}
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngIf="modif">
+    <ion-item>
+      <ion-input type="text" label="Image" [(ngModel)]="vtuber.pictureLink"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" label="Nom" [(ngModel)]="vtuber.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" label="Langue" [(ngModel)]="vtuber.language"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" label="Date de début" [(ngModel)]="vtuber.dateDebut"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" label="Agence" [(ngModel)]="vtuber.agency"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" label="Vague" [(ngModel)]="vtuber.wave"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" label="Plateforme Habituelle" [(ngModel)]="vtuber.streamingPlatform"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" label="Fanname" [(ngModel)]="vtuber.fanName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" label="time_TODO" [(ngModel)]="vtuber.time_TODO"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-toggle label="toujours actif" [(ngModel)]="vtuber.graduated"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-textarea label="Lore" rows="20" [(ngModel)]="vtuber.lore"></ion-textarea>
+    </ion-item>
+    <p class="text-center">
+      <ion-button (click)="onModif()">Modifier</ion-button>
+    </p>
+  </div>
+</ion-content>

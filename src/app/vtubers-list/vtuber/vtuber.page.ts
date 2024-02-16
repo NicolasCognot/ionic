@@ -1,30 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
-import { FilmService } from 'src/app/film.service';
-import { Film } from 'src/app/models/film.model';
+import { VtuberService } from 'src/app/vtuber.service';
+import { Vtuber } from 'src/app/models/vtuber.model';
 
 @Component({
-  selector: 'app-film',
-  templateUrl: './film.page.html',
-  styleUrls: ['./film.page.scss'],
+  selector: 'app-vtuber',
+  templateUrl: './vtuber.page.html',
+  styleUrls: ['./vtuber.page.scss'],
 })
-export class FilmPage implements OnInit {
+export class VtuberPage implements OnInit {
   modif: boolean = false;
-  film!: Film;
+  vtuber!: Vtuber;
 
   constructor(
     private alertCtrl : AlertController,
     private route: ActivatedRoute,
-    private Film: FilmService,
+    private Vtuber: VtuberService,
     private toastCtrl: ToastController,
     private router: Router
   ) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.Film.get(id).subscribe((value: any) => {
-      this.film = value;
+    this.Vtuber.get(id).subscribe((value: any) => {
+      this.vtuber = value;
     });
   }
 
@@ -58,14 +58,14 @@ export class FilmPage implements OnInit {
   }
 
   onModif() {
-    this.Film.update(this.film).subscribe(() => {
+    this.Vtuber.update(this.vtuber).subscribe(() => {
       this.presentToast();
       this.modif = false;
     });
   }
 
   onDelete(id: any) {
-    this.Film.delete(id);
-    this.router.navigate(['/films']);
+    this.Vtuber.delete(id);
+    this.router.navigate(['/vtubers']);
   }
 }

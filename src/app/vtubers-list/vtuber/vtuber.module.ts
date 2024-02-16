@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FilmPageRoutingModule } from './film-routing.module';
+import { VtuberPageRoutingModule } from './vtuber-routing.module';
 
-import { FilmPage } from './film.page';
+import { VtuberPage } from './vtuber.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FilmPageRoutingModule
+    VtuberPageRoutingModule
   ],
-  declarations: [FilmPage]
+  declarations: [VtuberPage]
 })
-export class FilmPageModule {}
+export class VtuberPageModule {}
