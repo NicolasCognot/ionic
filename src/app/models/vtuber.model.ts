@@ -9,7 +9,7 @@ export class Vtuber {
     dateDebut: string;
     fanName: string;
     lore: string;
-    time_TODO: string;
+    artist: string;
     name: string;
 
     constructor() {
@@ -22,7 +22,7 @@ export class Vtuber {
         this.dateDebut = '';
         this.fanName = '';
         this.lore = '';
-        this.time_TODO = '';
+        this.artist = '';
         this.name = '';
     }
 }

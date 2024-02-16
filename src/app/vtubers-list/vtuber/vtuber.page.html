@@ -14,7 +14,7 @@
         <ion-col>
           <strong>toujours actif :</strong>
           <ion-icon *ngIf="vtuber.graduated" name="checkmark"></ion-icon>
-          <ion-icon *ngIf="!vtuber.graduated" name="close-circle"></ion-icon>
+          <ion-icon *ngIf="!vtuber.graduated" name="close-circle-outline"></ion-icon>
         </ion-col>
         <ion-col>
           <ion-button (click)="onDelete(vtuber.id)">
@@ -47,13 +47,13 @@
           {{vtuber.language}} <br>
         </ion-col>
         <ion-col>
-          <strong>time_TODO</strong> <br>
-          {{vtuber.time_TODO}}
+          <strong>Artist</strong> <br>
+          {{vtuber.artist}}
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <strong>Résumé</strong> <br>
+          <strong>Lore</strong> <br>
           <p>
             {{vtuber.lore}}
           </p>
@@ -87,7 +87,7 @@
       <ion-input type="text" label="Fanname" [(ngModel)]="vtuber.fanName"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" label="time_TODO" [(ngModel)]="vtuber.time_TODO"></ion-input>
+      <ion-input type="text" label="artist" [(ngModel)]="vtuber.artist"></ion-input>
     </ion-item>
     <ion-item>
       <ion-toggle label="toujours actif" [(ngModel)]="vtuber.graduated"></ion-toggle>
